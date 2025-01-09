@@ -1,0 +1,196 @@
+Project Overview
+Goal: Build a web application that allows you and your friends to easily split grocery bills by:
+
+Scanning Receipts: Use AI-powered Optical Character Recognition (OCR) to extract itemized data from receipt images.
+Assigning Expenses: Provide an intuitive interface to assign specific items to individuals or groups.
+Calculating Splits: Automatically calculate who owes what based on the assigned items.
+Additional AI Features: Implement features like expense categorization, spending analytics, and predictive suggestions to enhance functionality and impressiveness.
+Step-by-Step Guide
+1. Plan Your Tech Stack
+Frontend:
+
+Framework: React.js – for building a dynamic and responsive user interface.
+UI Library: Material-UI or Ant Design – to speed up development with pre-built components and maintain a clean design.
+Backend:
+
+Runtime Environment: Node.js
+Framework: Express.js – for handling server-side logic and API endpoints.
+Database:
+
+Database: MongoDB – for flexible and scalable data storage.
+ORM/ODM: Mongoose – for easier data modeling and validation.
+AI and OCR Services:
+
+OCR: Use cloud-based services like Google Cloud Vision API, Microsoft Azure Computer Vision, or open-source solutions like Tesseract OCR.
+Additional AI: Utilize TensorFlow.js for client-side machine learning or Python-based TensorFlow/PyTorch for server-side processing.
+Deployment:
+
+Frontend: Netlify or Vercel
+Backend: Heroku, AWS, or Google Cloud Platform
+2. Implement Receipt Scanning with AI
+Step-by-Step:
+
+a. Capture and Upload Receipt Image
+Allow users to upload a photo of their receipt via the web app.
+Ensure image preprocessing (like cropping and enhancing) for better OCR results.
+b. Extract Text Using OCR
+Option 1: Google Cloud Vision API
+
+Pros: High accuracy, easy to use, supports receipt parsing.
+Cons: Incur costs after free tier, requires internet connection.
+Implementation:
+Send the uploaded image to the API.
+Receive structured data including items, prices, and totals.
+Google Cloud Vision API Documentation
+Option 2: Microsoft Azure Computer Vision
+
+Similar to Google’s offering with competitive pricing and features.
+Azure Computer Vision Documentation
+Option 3: Tesseract OCR
+
+Pros: Open-source and free.
+Cons: May require more preprocessing for accurate results, complex implementation.
+Implementation:
+Use libraries like tesseract.js for client-side processing or integrate with Python backend.
+Apply image preprocessing techniques (grayscale conversion, noise reduction).
+Parse raw text output to extract items and prices.
+Tesseract.js Documentation
+c. Parse and Organize Extracted Data
+Develop algorithms to process OCR output into a structured format:
+
+Items: Name and description.
+Prices: Corresponding cost for each item.
+Quantities: Number of units purchased.
+Handle common OCR errors and ambiguities by implementing validation checks and allowing manual corrections by users.
+
+d. User Interface for Assigning Items
+Display the parsed receipt data in a clear and editable format.
+Allow users to:
+Select Items: Click or tap on items to assign them.
+Assign to Individuals or Groups: Choose who is responsible for each item.
+Split Items: Support splitting individual items among multiple people (e.g., shared items).
+Implementation Tips:
+Use interactive UI components like checkboxes, dropdowns, and drag-and-drop features for ease of use.
+Provide real-time calculation of owed amounts as assignments are made.
+3. Calculate and Manage Payments
+a. Calculate Individual Shares
+Based on item assignments, compute the total amount each person owes.
+Include options for:
+Tax and Tip: Distribute additional costs proportionally or equally.
+Discounts: Account for any discounts applied to the total bill.
+b. Payment Tracking
+Keep records of settled and outstanding payments.
+Optionally integrate with payment services for seamless transactions:
+Payment Integrations:
+PayPal API
+Stripe API
+Venmo API (Note: Venmo has limited API support)
+Features:
+Send payment requests directly through the app.
+Update payment status automatically upon completion.
+c. Expense History
+Maintain a history of past shopping trips and splits.
+Provide summaries and detailed views for transparency and record-keeping.
+4. Additional AI Features for Enhanced Functionality
+Incorporate extra AI-driven features to make your app more impressive and useful:
+
+a. Expense Categorization
+Functionality: Automatically categorize items into groups like groceries, household supplies, etc.
+Implementation:
+Use pre-trained models or simple keyword matching for categorization.
+Enhance with Natural Language Processing (NLP) techniques.
+Libraries like spaCy or NLTK can be helpful for NLP tasks.
+b. Spending Analytics
+Functionality: Provide insights into spending habits over time.
+Features:
+Visualizations: Use charts and graphs to display spending breakdowns.
+Trends: Identify and highlight spending trends.
+Budgeting: Suggest budgets based on past spending patterns.
+Implementation:
+Utilize charting libraries like Chart.js or D3.js.
+Implement algorithms to analyze historical data and derive insights.
+c. Predictive Suggestions
+Functionality: Suggest items to add to the shopping list based on past purchases and frequency.
+Implementation:
+Use machine learning models to predict commonly purchased items.
+Frameworks like TensorFlow.js allow you to build and run ML models directly in the browser.
+Start with simple models (like frequency-based recommendations) and gradually incorporate more complex algorithms (like collaborative filtering).
+d. Chatbot Assistance
+Functionality: Implement a chatbot to assist with using the app, adding items, and answering queries.
+Implementation:
+Use services like Dialogflow or Microsoft Bot Framework to build conversational interfaces.
+Integrate the chatbot within the app for seamless user experience.
+e. Language Translation
+Functionality: Automatically translate receipts in different languages to English.
+Implementation:
+Utilize translation APIs such as Google Translate API or Microsoft Translator Text API.
+Combine with OCR to handle international receipts.
+f. Currency Conversion
+Functionality: Convert expenses in different currencies to a base currency.
+Implementation:
+Use exchange rate APIs like Fixer or Open Exchange Rates.
+Automatically detect currency from receipts and perform conversions.
+5. Development Workflow
+a. Agile Approach
+Sprint Planning: Break down the project into manageable tasks and sprints.
+Version Control: Use Git and platforms like GitHub for code management and collaboration.
+Continuous Integration/Continuous Deployment (CI/CD): Set up pipelines using GitHub Actions or Travis CI for automated testing and deployment.
+b. Testing
+Unit Testing: Write tests for individual components using frameworks like Jest (for JavaScript).
+Integration Testing: Ensure different parts of the app work together seamlessly.
+User Testing: Gather feedback from real users (friends and family) to identify usability issues and areas for improvement.
+c. Documentation
+Maintain thorough documentation of your codebase and APIs.
+Create a README file explaining the project's purpose, setup instructions, and usage guides.
+Document your learning process and challenges overcome; this can be valuable during interviews.
+6. Showcasing on Your Resume
+a. Highlight Technical Skills
+List all technologies, languages, and frameworks used.
+Emphasize your experience with AI and machine learning integrations.
+b. Describe Project Impact
+Explain how your app solves real-world problems.
+Mention any metrics or feedback received (e.g., number of users, successful transactions).
+c. Include Links
+Provide links to:
+Live Application: Deployed version of your app.
+GitHub Repository: Source code with proper documentation.
+Demo Videos: Short clips demonstrating app features and functionalities.
+d. Discuss Challenges and Solutions
+Be prepared to talk about obstacles you faced during development and how you overcame them.
+Discuss what you learned and how this project has prepared you for future roles.
+Learning Resources
+Web Development:
+
+freeCodeCamp
+Codecademy
+MDN Web Docs
+React.js:
+
+Official React Documentation
+React Tutorial by Scrimba
+Node.js and Express.js:
+
+Node.js Official Docs
+Express.js Guide
+AI and Machine Learning:
+
+Google Cloud Vision Tutorials
+TensorFlow.js Tutorials
+Coursera Machine Learning Course by Andrew Ng
+Deployment:
+
+Netlify Deployment Guide
+Heroku Deployment Guide
+Conclusion
+Embarking on this project will provide you with comprehensive experience across various aspects of software development, including frontend and backend development, AI integration, and deployment. It will significantly bolster your resume by demonstrating your ability to apply complex technologies to solve practical problems.
+
+Tips for Success:
+
+Start Small: Begin with core functionalities and gradually add more complex features.
+Stay Organized: Use project management tools like Trello or Jira to keep track of tasks.
+Seek Feedback: Regularly get input from peers or mentors to improve your app.
+Iterate and Improve: Use feedback and testing results to refine and enhance your application continually.
+Document Everything: Keep detailed records of your development process, decisions made, and lessons learned.
+Good luck with your project! It's a fantastic learning opportunity and will undoubtedly make a strong impression on potential employers.
+
+Let me know if you need more detailed information on any specific part of this process or further assistance with resources and implementation strategies!
